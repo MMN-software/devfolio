@@ -5,326 +5,565 @@ cat > index.html <<'EOF'
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Mohammad Mehdi Nemati | Portfolio</title>
-  <meta name="description" content="Mohammad Mehdi Nemati — Software Developer (Shiraz). Portfolio, skills, contact." />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Mohamad Mehdi Nemati | Portfolio</title>
+  <meta name="description" content="رزومه و پورتفولیوی Mohamad Mehdi Nemati - Software Developer از شیراز" />
 
   <style>
     :root{
-      --bg:#070a10;
-      --card:#0c1220;
-      --card2:#0b1020;
-      --text:#e8eefc;
-      --muted:#a9b6d6;
-      --line:rgba(255,255,255,.08);
-      --shadow:0 18px 50px rgba(0,0,0,.55);
-      --r:18px;
+      --bg0:#060913;
+      --bg1:#070b18;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.14);
+      --text:#e9eefc;
+      --muted:rgba(233,238,252,.72);
+      --muted2:rgba(233,238,252,.58);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+      --radius2: 28px;
+      --accent: #9ad7ff;
+      --accent2:#b7ffdf;
+      --focus: #7cc7ff;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
-      background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(120,140,255,.14), transparent 60%),
-        radial-gradient(900px 600px at 80% 20%, rgba(0,220,255,.10), transparent 55%),
-        radial-gradient(900px 600px at 30% 90%, rgba(255,120,220,.08), transparent 55%),
-        var(--bg);
       color:var(--text);
-      line-height:1.75;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Vazirmatn", "Noto Sans Arabic", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(122,180,255,.20), transparent 55%),
+        radial-gradient(900px 500px at 80% 15%, rgba(162,255,219,.14), transparent 55%),
+        radial-gradient(1000px 600px at 50% 90%, rgba(122,180,255,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
     }
-    a{color:inherit}
-    .wrap{max-width:980px; margin:0 auto; padding:26px 16px 70px;}
+
+    a{color:inherit; text-decoration:none}
+    a.underline{border-bottom:1px solid rgba(255,255,255,.25)}
+    a.underline:hover{border-bottom-color:rgba(255,255,255,.55)}
+
+    .container{
+      width:min(1050px, 92vw);
+      margin: 0 auto;
+      padding: 22px 0 70px;
+    }
+
+    /* Top nav */
     .nav{
-      position:sticky; top:0; z-index:5;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(7,10,16,.86), rgba(7,10,16,.35));
-      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+      margin: 0 auto 18px;
+      padding: 10px 0;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(6,9,19,.82), rgba(6,9,19,.35));
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .navin{max-width:980px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:10px;}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-    .dot{width:10px; height:10px; border-radius:50%; background:#fff; box-shadow:0 0 18px rgba(255,255,255,.35)}
-    .brand b{letter-spacing:.6px}
-    .links{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
-    .links a{
-      text-decoration:none; color:var(--muted);
-      padding:8px 10px; border-radius:999px;
-      border:1px solid transparent;
+
+    .navInner{
+      width:min(1050px, 92vw);
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
     }
-    .links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.4px;
+      opacity:.95;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
+      box-shadow: 0 0 14px rgba(154,215,255,.55);
+    }
+    .brand small{font-weight:600; opacity:.75}
+
+    .menu{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      align-items:center;
+    }
+    .menu a{
+      padding:8px 10px;
+      border-radius:12px;
+      color:var(--muted);
+      font-weight:600;
+      font-size: 14px;
+      transition:.2s;
+    }
+    .menu a:hover{
+      color:var(--text);
+      background: rgba(255,255,255,.06);
+    }
+
+    /* Hero */
     .hero{
-      margin-top:18px;
-      border:1px solid var(--line);
-      border-radius:calc(var(--r) + 10px);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      margin-top: 18px;
+      padding: 30px 22px;
+      border-radius: var(--radius2);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04)),
+        radial-gradient(800px 400px at 10% 10%, rgba(154,215,255,.18), transparent 60%),
+        radial-gradient(700px 380px at 90% 20%, rgba(183,255,223,.12), transparent 60%);
+      border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      padding:26px 18px;
-      overflow:hidden;
       position:relative;
+      overflow:hidden;
     }
-    .hero:before{
+    .hero::after{
       content:"";
-      position:absolute; inset:-60px -60px auto auto;
-      width:240px; height:240px;
-      background: radial-gradient(circle at 30% 30%, rgba(120,140,255,.35), transparent 60%);
-      filter: blur(2px);
-      transform: rotate(20deg);
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(800px 320px at 50% -10%, rgba(255,255,255,.06), transparent 55%);
       pointer-events:none;
     }
-    h1{margin:0 0 6px; font-size: clamp(30px, 6vw, 44px); letter-spacing:.2px}
-    .sub{margin:0; color:var(--muted); font-size: clamp(14px, 2.7vw, 18px)}
-    .sub strong{color:var(--text); font-weight:650}
-    .intro{margin:14px 0 18px; color:var(--muted)}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px; border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text); text-decoration:none;
-      min-width: 140px;
-    }
-    .btn:hover{background:rgba(255,255,255,.06)}
-    .btn.primary{
-      background:#ffffff;
-      color:#101424;
-      border-color:#ffffff;
-      font-weight:750;
-    }
-    .btn.primary:hover{filter:brightness(.95)}
-    .miniLinks{
-      margin-top:16px;
-      display:flex; gap:18px; flex-wrap:wrap;
-      color:var(--muted);
-    }
-    .miniLinks a{
-      color:var(--muted);
-      text-decoration:none;
-      border-bottom:1px solid rgba(255,255,255,.22);
-      padding-bottom:2px;
-    }
-    .miniLinks a:hover{color:var(--text); border-bottom-color:rgba(255,255,255,.55)}
-    .grid{display:grid; gap:14px; margin-top:18px}
-    .card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border-radius:calc(var(--r) + 4px);
-      padding:18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.45);
-    }
-    .card h2{margin:0 0 10px; font-size:22px}
-    .card p{margin:0; color:var(--muted)}
-    .projects{
+    .heroGrid{
       display:grid;
-      grid-template-columns: 1fr;
-      gap:14px;
-      margin-top:12px;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 22px;
+      align-items:center;
     }
-    .proj{
-      border:1px solid var(--line);
-      border-radius:calc(var(--r) + 2px);
-      background: rgba(0,0,0,.10);
-      padding:16px;
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing:.2px;
+      line-height:1.1;
     }
-    .projTop{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    .badge{
+    .subtitle{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-weight: 650;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .pill{
       display:inline-flex;
       align-items:center;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      background:rgba(255,255,255,.03);
-      white-space:nowrap;
+      gap:8px;
+      padding:8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
     }
-    .proj h3{margin:0; font-size:18px}
-    .proj .meta{margin-top:8px; color:var(--muted); font-size:14px}
-    .proj .actions{margin-top:10px; display:flex; gap:12px; justify-content:flex-start; flex-wrap:wrap}
-    .proj .actions a{
-      color:var(--text);
-      text-decoration:none;
-      border-bottom:1px solid rgba(255,255,255,.25);
-      padding-bottom:2px;
+
+    .about{
+      margin: 10px 0 18px;
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: 15px;
     }
-    .proj .actions a:hover{border-bottom-color:rgba(255,255,255,.55)}
-    .chips{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
-    .chip{
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:14px;
+
+    .ctaRow{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 14px;
     }
-    .two{
+    .btn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 11px 16px;
+      border-radius: 16px;
+      font-weight: 750;
+      cursor:pointer;
+      transition:.18s;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .btn:active{transform: translateY(0px)}
+    .btnPrimary{
+      background: rgba(255,255,255,.92);
+      color:#0b1220;
+      border-color: rgba(255,255,255,.55);
+    }
+    .btnPrimary:hover{background:#fff}
+    .btn:focus{outline:2px solid rgba(124,199,255,.55); outline-offset:2px}
+
+    .linksCard{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .linksTitle{
+      margin: 0 0 10px;
+      font-weight: 800;
+      letter-spacing:.2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .linkRow{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .linkItem{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .linkItem span{
+      color: var(--muted2);
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .linkItem a{
+      font-weight: 800;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,.25);
+    }
+    .linkItem a:hover{border-bottom-color: rgba(255,255,255,.60)}
+
+    /* Sections */
+    .section{
+      margin-top: 22px;
+      padding: 18px 18px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 40px rgba(0,0,0,.25);
+    }
+    .section h2{
+      margin: 2px 0 12px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+    .section p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.95;
+    }
+
+    .grid2{
       display:grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .card{
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .card h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--text);
+      letter-spacing:.2px;
+    }
+    .meta{
+      color: var(--muted2);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    /* Projects */
+    .projectsIntro{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
       gap:14px;
+      flex-wrap:wrap;
     }
-    @media (min-width: 860px){
-      .grid{grid-template-columns: 1.2fr .8fr}
-      .two{grid-template-columns: 1fr 1fr}
+    .hint{
+      font-size: 13px;
+      color: var(--muted2);
+      border:1px dashed rgba(255,255,255,.18);
+      padding:10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      max-width: 520px;
     }
-    .foot{
-      margin-top:18px;
+    .projCard{
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .projTop{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .projTitle{
+      margin:0;
+      font-weight: 850;
+      font-size: 16px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .projDesc{
+      margin: 10px 0 12px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+    .projLinks{
+      display:flex;
+      gap:12px;
+      justify-content:flex-start;
+    }
+    .projLinks a{
+      font-weight: 850;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,.22);
+      padding-bottom: 2px;
+    }
+    .projLinks a:hover{border-bottom-color: rgba(255,255,255,.60)}
+
+    /* Skills */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .chip{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.18);
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
       text-align:center;
-      color:var(--muted);
-      font-size:14px;
+      color: var(--muted2);
+      padding: 12px 0 0;
+      font-weight: 650;
     }
-    .sep{height:1px; background:var(--line); margin:12px 0}
-    .small{font-size:14px; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .heroGrid{grid-template-columns: 1fr; gap:14px}
+      .grid2{grid-template-columns: 1fr}
+      .menu{display:none}
+    }
   </style>
 </head>
-<body>
 
+<body>
   <div class="nav">
-    <div class="navin">
-      <a class="brand" href="#top">
-        <span class="dot" aria-hidden="true"></span>
-        <b>MMN</b>
-      </a>
-      <div class="links">
+    <div class="navInner">
+      <div class="brand" aria-label="brand">
+        <div class="dot" aria-hidden="true"></div>
+        <div>MMN <small>Portfolio</small></div>
+      </div>
+      <nav class="menu" aria-label="menu">
         <a href="#projects">پروژه‌ها</a>
         <a href="#experience">سابقه</a>
         <a href="#skills">مهارت‌ها</a>
         <a href="#education">تحصیلات</a>
         <a href="#contact">تماس</a>
-      </div>
+      </nav>
     </div>
   </div>
 
-  <main id="top" class="wrap">
-
-    <section class="hero">
-      <h1>Mohammad Mehdi Nemati</h1>
-      <p class="sub">
-        <strong>Software Developer</strong> • Shiraz
-      </p>
-
-      <p class="intro">
-        دانشجو هستم و دنبال فرصت‌های کاری <b>داخلی</b> و <b>خارجی</b> (به‌ویژه ریموت) هستم.
-        تمرکز من روی یادگیری سریع، اجرای دقیق و ساخت پروژه‌های قابل ارائه است.
-      </p>
-
-      <div class="cta">
-        <a class="btn" href="#contact">تماس</a>
-        <!-- اگر فایل cv.pdf رو کنار index.html گذاشتی، این لینک کار می‌کنه -->
-        <a class="btn primary" href="cv.pdf" download>دانلود CV</a>
-      </div>
-
-      <div class="miniLinks" aria-label="quick links">
-        <a href="mailto:mohamadmehdi.neemati@gmail.com">mohamadmehdi.neemati@gmail.com</a>
-        <a href="https://github.com/MMN-software" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://t.me/MMN_Real" target="_blank" rel="noopener">Telegram</a>
-      </div>
-    </section>
-
-    <section class="grid">
-
-      <section id="projects" class="card">
-        <h2>پروژه‌های منتخب</h2>
-        <p>فعلاً پروژه‌ای اضافه نکردم. به محض آماده شدن، این بخش را با لینک <b>Code</b> و <b>Demo</b> کامل می‌کنم.</p>
-
-        <div class="projects">
-          <div class="proj">
-            <div class="projTop">
-              <h3>پروژه 1 (به‌زودی)</h3>
-              <span class="badge">Tech: HTML, CSS, JS, Python</span>
-            </div>
-            <div class="meta">توضیح کوتاه: مشکل چی بود، چی ساختی، نتیجه چی شد (۲–۳ خط).</div>
-            <div class="actions">
-              <a href="#" onclick="return false;">Demo</a>
-              <a href="https://github.com/MMN-software" target="_blank" rel="noopener">Code</a>
-            </div>
+  <main class="container">
+    <section class="hero" id="top">
+      <div class="heroGrid">
+        <div>
+          <h1>Mohamad Mehdi Nemati</h1>
+          <div class="subtitle">
+            <span class="pill">برنامه‌نویس</span>
+            <span class="pill">Shiraz</span>
+            <span class="pill">دانشجو</span>
           </div>
 
-          <div class="proj">
-            <div class="projTop">
-              <h3>پروژه 2 (به‌زودی)</h3>
-              <span class="badge">Tech: …</span>
-            </div>
-            <div class="meta">توضیح کوتاه پروژه دوم…</div>
-            <div class="actions">
-              <a href="#" onclick="return false;">Demo</a>
-              <a href="https://github.com/MMN-software" target="_blank" rel="noopener">Code</a>
-            </div>
+          <p class="about">
+            دانشجو هستم و دنبال فرصت‌های کاری داخلی و خارجی (به‌ویژه ریموت) هستم.
+            تمرکزم روی یادگیری سریع، اجرای دقیق و ساخت خروجی‌های قابل ارائه است.
+          </p>
+
+          <div class="ctaRow">
+            <!-- اگر فایل CV واقعی نداری، فعلاً همین می‌مونه. بعداً cv.pdf رو کنار index.html می‌ذاری -->
+            <a class="btn btnPrimary" href="cv.pdf" target="_blank" rel="noopener">دانلود CV</a>
+            <a class="btn" href="#contact">تماس</a>
           </div>
         </div>
 
-        <div class="sep"></div>
-        <p class="small">
-          پیشنهاد: وقتی پروژه گذاشتی، برای هر پروژه ۱–۲ جمله نتیجه‌محور بنویس (مثلاً «بهبود سرعت X%»، «اتومات‌سازی کار Y»).
-        </p>
-      </section>
-
-      <aside class="card two">
-
-        <section id="experience" class="card" style="margin:0">
-          <h2>سابقه کاری</h2>
-          <p>
-            در حال حاضر دانشجو هستم. این بخش را می‌توانم با کارآموزی‌ها، پروژه‌های فریلنس یا فعالیت‌های دانشگاهی پُر کنم.
-          </p>
-          <div class="sep"></div>
-          <p class="small">
-            قالب پیشنهادی:
-            <br>• عنوان — نام شرکت (در صورت وجود) — سال/بازه
-            <br>• دستاورد/مسئولیت مهم ۱ (ترجیحاً با عدد/نتیجه)
-            <br>• دستاورد/مسئولیت مهم ۲
-          </p>
-        </section>
-
-        <section id="skills" class="card" style="margin:0">
-          <h2>مهارت‌ها</h2>
-          <p>مهارت‌هایی که فعلاً روی آن‌ها تمرکز دارم:</p>
-          <div class="chips" role="list">
-            <span class="chip" role="listitem">Python</span>
-            <span class="chip" role="listitem">JavaScript</span>
-            <span class="chip" role="listitem">HTML</span>
-            <span class="chip" role="listitem">CSS</span>
-            <span class="chip" role="listitem">Git</span>
-            <span class="chip" role="listitem">GitHub</span>
+        <aside class="linksCard" aria-label="quick links">
+          <div class="linksTitle">راه‌های ارتباطی</div>
+          <div class="linkRow">
+            <div class="linkItem">
+              <span>ایمیل</span>
+              <a href="mailto:mohamadmehdi.neemati@gmail.com">mohamadmehdi.neemati@gmail.com</a>
+            </div>
+            <div class="linkItem">
+              <span>Telegram</span>
+              <a href="https://t.me/MMN_Real" target="_blank" rel="noopener">@MMN_Real</a>
+            </div>
+            <div class="linkItem">
+              <span>GitHub</span>
+              <a href="https://github.com/MMN-software" target="_blank" rel="noopener">github.com/MMN-software</a>
+            </div>
           </div>
-        </section>
-
-      </aside>
+        </aside>
+      </div>
     </section>
 
-    <section class="two" style="margin-top:14px">
-      <section id="education" class="card">
-        <h2>تحصیلات</h2>
-        <p><b>دانشجو</b></p>
-        <div class="sep"></div>
-        <p class="small">
-          رشته — دانشگاه/مؤسسه<br>
-          سال شروع — سال پایان (یا در حال تحصیل)
-        </p>
-      </section>
+    <section class="section" id="projects">
+      <div class="projectsIntro">
+        <div>
+          <h2>پروژه‌های منتخب</h2>
+          <p>فعلاً پروژه‌ای اضافه نکردم. به محض آماده شدن، این بخش را با لینک Code و Demo کامل می‌کنم.</p>
+        </div>
+        <div class="hint">
+          پیشنهاد: برای هر پروژه ۱–۲ جمله نتیجه‌محور بنویس (مثلاً «بهبود سرعت X%»، «اتوماسیون‌سازی کار Y»).
+        </div>
+      </div>
 
-      <section class="card">
-        <h2>هدف شغلی</h2>
-        <p>
-          دنبال کار داخلی و خارجی هستم و برای یادگیری و همکاری تیمی آماده‌ام.
-          هدفم رشد سریع و ساخت خروجی‌های قابل ارائه در پروژه‌های واقعی است.
-        </p>
-      </section>
+      <div class="grid2">
+        <div class="projCard">
+          <div class="projTop">
+            <p class="projTitle">پروژه ۱ (به‌زودی)</p>
+            <span class="tag">Tech: HTML, CSS, JS, Python</span>
+          </div>
+          <p class="projDesc">توضیح کوتاه: مشکل چی بود، چی ساختی، نتیجه چی شد (۲–۳ خط).</p>
+          <div class="projLinks">
+            <a href="#" onclick="return false;">Code</a>
+            <a href="#" onclick="return false;">Demo</a>
+          </div>
+        </div>
+
+        <div class="projCard">
+          <div class="projTop">
+            <p class="projTitle">پروژه ۲ (به‌زودی)</p>
+            <span class="tag">Tech: ...</span>
+          </div>
+          <p class="projDesc">توضیح کوتاه پروژه دوم…</p>
+          <div class="projLinks">
+            <a href="#" onclick="return false;">Code</a>
+            <a href="#" onclick="return false;">Demo</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="card" style="margin-top:14px">
+    <section class="section" id="experience">
+      <h2>سابقه کاری</h2>
+      <p>
+        در حال حاضر دانشجو هستم. این بخش را می‌توانیم با کارآموزی‌ها، پروژه‌های فریلنس یا فعالیت‌های دانشگاهی پر کنیم.
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>عنوان شغلی — نام شرکت (در صورت وجود)</h3>
+          <div class="meta">سال/بازه</div>
+          <p>• دستاورد/مسئولیت مهم ۱ (ترجیحاً با عدد/نتیجه)</p>
+          <p>• دستاورد/مسئولیت مهم ۲</p>
+        </div>
+
+        <div class="card">
+          <h3>فعالیت‌های مرتبط (دانشگاه/فریلنس/پروژه)</h3>
+          <div class="meta">سال/بازه</div>
+          <p>• فعالیت ۱ (مثلاً ساخت یک ابزار، مشارکت در پروژه، انجام تمرین‌های جدی)</p>
+          <p>• فعالیت ۲</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>مهارت‌ها</h2>
+      <p>مهارت‌هایی که فعلاً روی آن‌ها تمرکز دارم:</p>
+      <div class="chips" aria-label="skills">
+        <div class="chip">Python</div>
+        <div class="chip">JavaScript</div>
+        <div class="chip">HTML</div>
+        <div class="chip">CSS</div>
+        <div class="chip">Git</div>
+        <div class="chip">GitHub</div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2>تحصیلات</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>دانشجو</h3>
+          <div class="meta">رشته — دانشگاه/مؤسسه</div>
+          <p>سال شروع — سال پایان (یا در حال تحصیل)</p>
+        </div>
+
+        <div class="card">
+          <h3>هدف شغلی</h3>
+          <p>
+            دنبال کار داخلی و خارجی هستم و برای یادگیری و همکاری تیمی آماده‌ام.
+            هدفم رشد سریع و ساخت پروژه‌های واقعی و قابل ارائه است.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <h2>تماس</h2>
       <p>برای همکاری یا پیشنهاد کار، سریع‌ترین راه‌ها:</p>
-      <div class="sep"></div>
-      <p class="small">
-        ایمیل: <a href="mailto:mohamadmehdi.neemati@gmail.com">mohamadmehdi.neemati@gmail.com</a><br>
-        تلگرام: <a href="https://t.me/MMN_Real" target="_blank" rel="noopener">@MMN_Real</a><br>
-        گیت‌هاب: <a href="https://github.com/MMN-software" target="_blank" rel="noopener">github.com/MMN-software</a>
-      </p>
+
+      <div class="grid2" style="margin-top:12px">
+        <div class="card">
+          <h3>ایمیل</h3>
+          <p><a class="underline" href="mailto:mohamadmehdi.neemati@gmail.com">mohamadmehdi.neemati@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>شبکه‌ها</h3>
+          <p>تلگرام: <a class="underline" href="https://t.me/MMN_Real" target="_blank" rel="noopener">@MMN_Real</a></p>
+          <p>گیت‌هاب: <a class="underline" href="https://github.com/MMN-software" target="_blank" rel="noopener">github.com/MMN-software</a></p>
+        </div>
+      </div>
     </section>
 
-    <div class="foot">© 2026 — ساخته شده با ❤️</div>
-
+    <footer>
+      © 2026 — ساخته شده با ❤️
+    </footer>
   </main>
 </body>
 </html>
-EOF 
+EOF
