@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>رزومه | نام شما</title>
+  <meta name="description" content="رزومه و نمونه‌کارهای نام شما" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+  <div class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Header -->
+    <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold">نام شما</h1>
+        <p class="text-zinc-300 mt-2">عنوان شغلی (مثلاً: Frontend Developer) • شهر/کشور</p>
+        <p class="text-zinc-400 mt-2 max-w-2xl">
+          یک معرفی کوتاه و حرفه‌ای در ۱ تا ۲ خط: چه کسی هستی، چه کاری می‌کنی، دنبال چه فرصتی هستی.
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <a class="px-4 py-2 rounded-xl bg-white text-black font-medium" href="#" target="_blank">دانلود CV</a>
+        <a class="px-4 py-2 rounded-xl border border-zinc-700" href="#contact">تماس</a>
+      </div>
+    </header>
+
+    <!-- Links -->
+    <section class="mt-6 flex flex-wrap gap-3 text-sm text-zinc-300">
+      <a class="underline underline-offset-4" href="#" target="_blank">GitHub</a>
+      <a class="underline underline-offset-4" href="#" target="_blank">LinkedIn</a>
+      <a class="underline underline-offset-4" href="mailto:you@example.com">you@example.com</a>
+    </section>
+
+    <!-- Grid -->
+    <main class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Featured Projects -->
+        <section class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+          <h2 class="text-xl font-semibold">پروژه‌های منتخب</h2>
+          <div class="mt-4 grid gap-4">
+            <article class="rounded-2xl border border-zinc-800 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-semibold">نام پروژه ۱</h3>
+                <div class="flex gap-3 text-sm">
+                  <a class="underline" href="#" target="_blank">Demo</a>
+                  <a class="underline" href="#" target="_blank">Code</a>
+                </div>
+              </div>
+              <p class="text-zinc-300 mt-2">
+                توضیح کوتاه: مشکل چی بود، چه چیزی ساختی، نتیجه چی شد (۱–۲ خط).
+              </p>
+              <p class="text-zinc-400 mt-2 text-sm">Tech: HTML, CSS, JS</p>
+            </article>
+
+            <article class="rounded-2xl border border-zinc-800 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-semibold">نام پروژه ۲</h3>
+                <div class="flex gap-3 text-sm">
+                  <a class="underline" href="#" target="_blank">Demo</a>
+                  <a class="underline" href="#" target="_blank">Code</a>
+                </div>
+              </div>
+              <p class="text-zinc-300 mt-2">
+                توضیح کوتاه پروژه دوم.
+              </p>
+              <p class="text-zinc-400 mt-2 text-sm">Tech: ...</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+          <h2 class="text-xl font-semibold">سابقه کاری</h2>
+          <div class="mt-4 space-y-4">
+            <div class="rounded-2xl border border-zinc-800 p-4">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <h3 class="font-semibold">عنوان شغلی — نام شرکت</h3>
+                <span class="text-sm text-zinc-400">1402 — 1404</span>
+              </div>
+              <ul class="mt-2 list-disc pr-5 text-zinc-300 space-y-1">
+                <li>دستاورد/مسئولیت مهم ۱ (ترجیحاً با عدد/نتیجه)</li>
+                <li>دستاورد/مسئولیت مهم ۲</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right -->
+      <aside class="space-y-6">
+        <!-- Skills -->
+        <section class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+          <h2 class="text-xl font-semibold">مهارت‌ها</h2>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-zinc-800 text-sm">Skill 1</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800 text-sm">Skill 2</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800 text-sm">Skill 3</span>
+            <span class="px-3 py-1 rounded-full bg-zinc-800 text-sm">Git</span>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+          <h2 class="text-xl font-semibold">تحصیلات</h2>
+          <p class="text-zinc-300 mt-3">رشته — دانشگاه/موسسه</p>
+          <p class="text-zinc-400 text-sm mt-1">سال شروع — سال پایان</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+          <h2 class="text-xl font-semibold">تماس</h2>
+          <p class="text-zinc-300 mt-3">ایمیل: <a class="underline" href="mailto:you@example.com">you@example.com</a></p>
+          <p class="text-zinc-300 mt-2">تلگرام/واتساپ: <a class="underline" href="#" target="_blank">@yourid</a></p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="mt-10 text-zinc-500 text-sm">
+      <p>© 2026 — ساخته شده با ❤️</p>
+    </footer>
+  </div>
+</body>
+</html>
